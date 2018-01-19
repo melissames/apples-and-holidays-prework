@@ -91,6 +91,7 @@ def all_supplies_in_holidays(holiday_hash)
       puts "  #{formatted_holiday}: #{formatted_supplies}"
     }
   }
+end  
 
 
 def all_holidays_with_bbq(holiday_hash)
