@@ -78,7 +78,7 @@ def all_supplies_in_holidays(holiday_hash)
         end
       }
       string_holiday.split('').each_with_index { |letter, index|
-        if string_holiday[0] == letter && string_holiday[index - 1] != "o"
+        if string_holiday[0] == letter && string_holiday[index - 1] != "o" || "m"
           formatted_holiday << letter.upcase
         elsif string_holiday[index] == "_"
           formatted_holiday << ' '
