@@ -88,7 +88,7 @@ def all_supplies_in_holidays(holiday_hash)
           formatted_holiday << letter
         end
       }
-      puts "#{formatted_holiday}: #{formatted_supplies}".indent(1)
+      puts "  #{formatted_holiday}: #{formatted_supplies}"
     }
   }
 end
