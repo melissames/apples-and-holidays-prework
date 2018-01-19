@@ -64,6 +64,33 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
 
+  holiday_hash.each { |season, holiday_object|
+    puts "#{season.capitalize}:"
+    holiday_object.each { |holiday, supplies_array|
+      string_holiday = holiday.to_s
+      formatted_holiday = ''
+      formatted_supplies = ''
+      supplies_array.each { |supply|
+        if supply == supplies_array[-1]
+          formatted_supplies << "#{supply}"
+        else
+          formatted_supplies << "#{supply}, "
+        end
+      }
+      string_holiday.split('').each_with_index { |letter, index|
+        if string_holiday[0] == letter && string_holiday[index - 1] != "o" && string_holiday[index - 1] != "e"
+          formatted_holiday << letter.upcase
+        elsif string_holiday[index] == "_"
+          formatted_holiday << ' '
+        elsif string_holiday[index - 1] == '_'
+          formatted_holiday << string_holiday[index].upcase
+        else
+          formatted_holiday << letter
+        end
+      }
+      puts "  #{formatted_holiday}: #{formatted_supplies}"
+    }
+  }
 end
 
 
